@@ -1,0 +1,9 @@
+services:
+  openai-image-relay:
+    build: .
+    container_name: openai-image-relay
+    restart: unless-stopped
+    env_file: [.env]
+    ports: ["127.0.0.1:3100:3100"]
+    mem_limit: 256m
+    init: true

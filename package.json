@@ -1,0 +1,1 @@
+{"name":"openai-image-relay","version":"1.0.0","private":true,"type":"module","scripts":{"start":"node src/server.js","test":"node --test","benchmark":"node benchmark/benchmark.js"}}
