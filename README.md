@@ -33,7 +33,11 @@ docker run -d --name openai-image-relay --restart unless-stopped \
   -p 127.0.0.1:3100:3100 ghcr.io/yilin101/openai-image-relay:latest
 ```
 
-如果 GHCR 包显示为私有，需要先执行 `docker login ghcr.io`；公开仓库通常可匿名拉取。
+该仓库为 Private，VPS 拉取前需要使用具有 `read:packages` 权限的 GitHub Token 登录 GHCR：
+
+```bash
+echo "$GITHUB_TOKEN" | docker login ghcr.io -u yilin101 --password-stdin
+```
 
 ## 配置
 
