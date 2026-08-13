@@ -1,6 +1,6 @@
 services:
   openai-image-relay:
-    build: .
+    image: ghcr.io/yilin101/openai-image-relay:latest
     container_name: openai-image-relay
     restart: unless-stopped
     env_file: [.env]
