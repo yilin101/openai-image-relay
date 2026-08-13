@@ -7,3 +7,10 @@ services:
     ports: ["127.0.0.1:3100:3100"]
     mem_limit: 256m
     init: true
+    networks:
+      - new_api_network
+
+networks:
+  new_api_network:
+    external: true
+    name: newapi_new-api-network
