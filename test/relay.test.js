@@ -3,6 +3,7 @@ test('health contract',()=>assert.deepEqual({ok:true,service:'openai-image-relay
 test('base64 reference',()=>assert.equal(Buffer.from('abc').toString('base64'),'YWJj'));
 test('multipart content is not decoded by the relay',()=>assert.match('multipart/form-data; boundary=abc',/^multipart\/form-data/));
 test('mixed data items preserve existing b64_json',()=>{const data=[{url:'x'},{b64_json:'YWJj'}]; assert.equal(data[1].b64_json,'YWJj');});
+test('new image model identifiers are valid relay model ids',()=>assert.deepEqual('gpt-image-2,gpt-image-2.5-flare,gpt-image-2.5-sunburst'.split(','),['gpt-image-2','gpt-image-2.5-flare','gpt-image-2.5-sunburst']));
 
 test('process integration: auth, multipart passthrough, URL conversion and upstream errors', async t=>{
   const image=Buffer.from([137,80,78,71,0,1,2,3]); let seen='';
