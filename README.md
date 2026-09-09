@@ -44,6 +44,7 @@ echo "$GITHUB_TOKEN" | docker login ghcr.io -u yilin101 --password-stdin
 `RELAY_API_KEY` 校验 New API 到 Relay 的 Bearer Key；`UPSTREAM_API_KEY` 仅由 Relay 注入到上游请求，二者必须分离。`MAX_IMAGE_SIZE_MB` 限制下载图片大小，下载仅允许 HTTP/HTTPS，并拒绝常见私网地址。
 
 默认模型列表包含 `gpt-image-2`、`gpt-image-2.5-flare` 和 `gpt-image-2.5-sunburst`。模型名会随图片请求原样转发给上游；如果上游不支持某个模型，会返回上游自己的错误。可通过 `MODEL_IDS` 调整 `/v1/models` 列表。
+更新镜像后，Compose 会继续使用同一个容器名和 New API 外部网络。
 
 ## 路由
 
